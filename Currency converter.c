@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+	int choice;
+  float amt, convert_amt;
+  float usd_inr=90.73;
+  float gbp_inr=121.29;
+do
+{
+        printf("\n***** Currency Converter Menu *****\n");
+        printf("1. GBP to INR\n");
+        printf("2. INR to GBP\n");
+        printf("3. USD to INR\n");
+        printf("4. INR to USD\n");
+        printf("5. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if (choice >= 1 && choice <= 4) {
+            printf("Enter the amount to convert: ");
+            scanf("%f", &amt);
+        }
+
+        switch (choice) {
+            case 1:
+                convert_amt = amt * gbp_inr;
+                printf("%.2f GBP = %.2f INR\n", amt, convert_amt);
+                break;
+            case 2:
+                convert_amt = amt / gbp_inr;
+                printf("%.2f INR = %.2f GBP\n", amt, convert_amt);
+                break;
+            case 3:
+                convert_amt = amt * usd_inr;
+                printf("%.2f USD = %.2f INR\n", amt, convert_amt);
+                break;
+            case 4:
+                convert_amt = amt / usd_inr;
+                printf("%.2f INR = %.2f USD\n", amt, convert_amt);
+                break;
+            case 5:
+                printf("Exiting the program. Goodbye!\n");
+                break;
+            default:
+                printf("Invalid choice! Please enter a number between 1 and 5.\n");
+        }
+    } while (choice != 5);
+
+    return 0;
+}
